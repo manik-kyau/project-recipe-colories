@@ -39,11 +39,11 @@ const Header = () => {
             </div>
             </nav>
             {/* Banner Section */}
-            <div className="banner flex justify-center items-center lg:mt-12 rounded-3xl h-[550px] ">
+            <div className="banner flex justify-center items-center lg:mt-12 rounded-3xl h-[550px] p-8">
                 <div className='lg:w-4/6 space-y-6 mb-6'>
-                    <h1 className='text-3xl lg:text-5xl font-bold text-white lg:leading-[60px]'>Discover an exceptional cooking class tailored for you!</h1>
-                    <p className='text-lg font-normal text-white pb-2'>Learn and Master Basic Programming, Data Structures, Algorithm, OOP, Database and solve 500+ coding problems to become an exceptionally well world-class Programmer.</p>
-                    <div className='space-x-6'>
+                    <h1 className='text-3xl lg:text-5xl text-center font-bold text-white lg:leading-[60px]'>Discover an exceptional cooking class tailored for you!</h1>
+                    <p className='text-lg font-normal text-center text-white pb-2'>Learn and Master Basic Programming, Data Structures, Algorithm, OOP, Database and solve 500+ coding problems to become an exceptionally well world-class Programmer.</p>
+                    <div className='w-[339px] space-x-6 mx-auto'>
                         <button className='text-xl font-semibold py-2 px-4 rounded-[50px] bg-[#0BE58A] border-2 border-[#0BE58A]'>Explore Now</button>
                         <button className='text-xl text-white font-semibold py-2 px-4 rounded-[50px] border-2 border-white'>Our Feedback</button>
                     </div>
