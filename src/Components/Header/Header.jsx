@@ -4,7 +4,7 @@ import search from '../../assets/images/icons/search.png'
 import './Header.css'
 const Header = () => {
     return (
-        <div className="max-w-[1180px] mx-auto">
+        <div className="max-w-[1180px] mx-auto mt-6">
             <nav>
             <div className="navbar bg-base-100">
               <div className="navbar-start">
@@ -30,9 +30,9 @@ const Header = () => {
                 </ul>
               </div>
               <div className="navbar-end space-x-5">
-                <div className='flex birder'>
+                <div className='flex border bg-gray-100 px-4 py-2 rounded-[50px]'>
                     <img src={search} alt="" />
-                    <input className="border" type="text" />
+                    <input className="bg-gray-100 outline-none px-2" type="text " placeholder='Search' />
                 </div>
                 <button className='bg-green-500 p-1 rounded-full'><img  src={naveicon} alt="" /></button>
               </div>
