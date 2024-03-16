@@ -7,12 +7,26 @@ import { useEffect } from 'react';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-
+  const[bookmark, setBookmark] = useState([]);
   useEffect(()=>{
     fetch('recipes.json')
     .then(response => response.json())
     .then(data => setRecipes(data))
   },[]);
+  // handle Recipe Button
+  const handleRecipeBtn = recipe =>{
+    setBookmark([...bookmark, recipe]);
+    // console.log('Ami ki button connect korte parbo?',recipe);
+    // const selectedRecipe = bookmark.find(curr => curr.id === recipe.recipe_id);
+    // if(!selectedRecipe){
+    //   setBookmark([...bookmark, recipe])
+    // }
+  }
+  const handleremoveRecipe = (id)=>{
+    // console.log('habi jabi r add korvo na', id);
+    const remainingBookmark = bookmark.filter(recipe => recipe.recipe_id !== id);
+    setBookmark(remainingBookmark);
+  }
 
   return (
     <div className='px-5 lg:px-0'>
@@ -24,8 +38,8 @@ function App() {
         </div>
 
         <div className='flex flex-col lg:flex-row gap-5'>
-            <Recipes recipes = {recipes}></Recipes>
-            <Bookmarks></Bookmarks>
+            <Recipes recipes = {recipes} handleRecipeBtn = {handleRecipeBtn}></Recipes>
+            <Bookmarks bookmark={bookmark} handleremoveRecipe = {handleremoveRecipe}></Bookmarks>
         </div>
       </div>
     </div>

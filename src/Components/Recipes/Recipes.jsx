@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import Recipe from "../Recipe/Recipe";
 
-const Recipes = ({recipes}) => {
+const Recipes = ({recipes, handleRecipeBtn}) => {
     return (
         <div className="lg:w-2/3 grid grid-cols-1 lg:grid-cols-2 gap-5">
             {
                 recipes.map((recipe)=><Recipe
                 key = {recipe.recipe_id}
+                handleRecipeBtn = {handleRecipeBtn}
                 recipe = {recipe}
                 ></Recipe>)
             }
@@ -14,6 +15,7 @@ const Recipes = ({recipes}) => {
     );
 };
 Recipes.propTypes ={
-    recipes: PropTypes.object.isRequired,
+    recipes: PropTypes.array.isRequired,
+    handleRecipeBtn: PropTypes.func.isRequired,
 }
 export default Recipes;

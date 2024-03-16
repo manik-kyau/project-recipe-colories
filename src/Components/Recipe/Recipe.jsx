@@ -1,23 +1,25 @@
 import PropTypes from 'prop-types';
 import views from '../../assets/images/icons/view.png'
 import calory from '../../assets/images/icons/calory.png'
-const Recipe = ({recipe}) => {
-    console.log('Connected recipe',recipe)
+const Recipe = ({recipe, handleRecipeBtn}) => {
+    // console.log('Connected recipe',recipe)
     return (
         <div className="card bg-base-100 hover:shadow-xl p-5 border">
-          <img className='rounded-2xl' src={recipe.recipe_image} alt="Shoes"/>
+          <img className='rounded-2xl h-[200px]' src={recipe.recipe_image} alt="Shoes"/>
           <div className="mt-6">
             <h2 className="text-xl font-semibold">{recipe.recipe_name}</h2>
             <p className="text-base font-normal text-[#878787] mt-4">{recipe.short_description}</p>
             <div className='my-6'>
                 <h2 className="text-lg font-medium text-[#282828]">Ingredients: {recipe.ingredients.length} </h2>
                 
-                <ul className="ml-4 mt-3">
+                <div className="ml-4 mt-3">
                 {
-                    recipe.ingredients.map((ingred,idx) => <li key={idx} className="text-base font-normal text-[#878787]">{ingred}</li>)
-                        
+                    recipe.ingredients.map((ingred,idx) => <ul key={idx}>
+                        <li className="text-base font-normal text-[#878787]">{ingred}</li>
+                    </ul>)  
                 }
-                </ul>
+                </div>
+
             </div>
             <div className='flex gap-6'>
                 <div className='flex items-center gap-1'>
@@ -30,7 +32,7 @@ const Recipe = ({recipe}) => {
                 </div>
             </div>
             <div className="card-actions mt-4">
-              <button className="btn text-lg font-medium bg-[#0BE58A] hover:bg-[#0BE58A] text-[#150B2B] rounded-[50px] px-6">Want to Cook</button>
+              <button onClick={() => handleRecipeBtn(recipe)} className="btn text-lg font-medium bg-[#0BE58A] hover:bg-[#0BE58A] text-[#150B2B] rounded-[50px] px-6">Want to Cook</button>
             </div>
           </div>
         </div>
@@ -38,5 +40,6 @@ const Recipe = ({recipe}) => {
 };
 Recipe.propTypes = {
     recipe: PropTypes.object.isRequired,
+    handleRecipeBtn: PropTypes.func.isRequired,
 }
 export default Recipe;
