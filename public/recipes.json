@@ -1,0 +1,59 @@
+[   
+    {
+        "recipe_id": "1",
+        "recipe_name": "Chicken Biryani",
+        "short_description": "A fragrant and flavorful Indian rice dish cooked with tender chicken and aromatic spices.",
+        "ingredients": ["2 cups basmati rice","500 g chicken, cut into pieces","2 onions, thinly sliced","4 tomatoes, chopped"],
+        "preparing_time": "60 min",
+        "calories": "450 calories",
+        "recipe_image": "https://i.ibb.co/HDT5kPj/chicken-biriyani.jpg"
+    },
+    {
+        "recipe_id": "2",
+        "recipe_name": "Beef Stroganoff",
+        "short_description": "A creamy and comforting Russian dish featuring tender beef strips in a rich mushroom and sour cream sauce.",
+        "ingredients": ["500 g beef sirloin, thinly sliced","2 onions, finely chopped","200 g mushrooms, sliced","2 cloves garlic, minced"],
+        "preparing_time": "40 min",
+        "calories": "380 calories",
+        "recipe_image": "https://i.ibb.co/0FwW4tg/beef.webp"
+    },
+      
+    {
+        "recipe_id": "3",
+        "recipe_name": "Classic Margherita Pizza",
+        "short_description": "A timeless favorite - homemade pizza topped with fresh tomatoes, basil, and mozzarella cheese.",
+        "ingredients": ["300 g pizza dough", "200 g mozzarella cheese", "200 g tomato sauce", "Handful of fresh basil leaves"],
+        "preparing_time": "25 min",
+        "calories": "280 calories",
+        "recipe_image": "https://i.ibb.co/GMtKtFr/360pizza.png"
+    },
+    {
+        "recipe_id": "4",
+        "recipe_name": "Grilled Salmon with Lemon Butter Sauce",
+        "short_description": "Deliciously grilled salmon fillets served with a tangy lemon butter sauce.",
+        "ingredients": ["4 salmon fillets", "2 lemons", "50 g butter", "Fresh parsley for garnish"],
+        "preparing_time": "20 min",
+        "calories": "350 calories",
+        "recipe_image": "https://i.ibb.co/J3wDfbs/lemon-butter-grilled-salmon-recipe.jpg"
+    },
+    {
+        "recipe_id": "5",
+        "recipe_name": "Vegetable Pad Thai",
+        "short_description": "A vegetarian twist on the classic Thai dish, packed with colorful vegetables and bold flavors.",
+        "ingredients": ["250 g rice noodles", "200 g tofu", "100 g bean sprouts", "1 carrot, julienned"],
+        "preparing_time": "35 min",
+        "calories": "300 calories",
+        "recipe_image": "https://i.ibb.co/zr5YCjt/instagram-In-Stream-Square-Vegetable-Pad-Thai0675-1080x675.jpg"
+    },
+    {
+        "recipe_id": "6",
+        "recipe_name": "Classic Beef Burger",
+        "short_description": "An iconic American burger made with juicy beef patties, fresh vegetables, and melted cheese, sandwiched between soft burger buns.",
+        "ingredients": ["500 g ground beef","4 burger buns","4 slices cheddar cheese","1 onion, thinly sliced"],
+        "preparing_time": "25 min",
+        "calories": "550 calories",
+        "recipe_image": "https://i.ibb.co/NyQh6KN/beefburger.webp"
+    }
+      
+  ]
+  

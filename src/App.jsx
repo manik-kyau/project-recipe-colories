@@ -1,9 +1,19 @@
 // import './App.css'
+import { useState } from 'react';
 import Bookmarks from './Components/Bookmarks/Bookmarks';
 import Header from './Components/Header/Header'
-import Products from './Components/Products/Products'
+import Recipes from './Components/Recipes/Recipes'
+import { useEffect } from 'react';
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(()=>{
+    fetch('recipes.json')
+    .then(response => response.json())
+    .then(data => setRecipes(data))
+  },[]);
+
   return (
     <div className='px-5 lg:px-0'>
       <Header></Header>
@@ -14,7 +24,7 @@ function App() {
         </div>
 
         <div className='flex flex-col lg:flex-row gap-5'>
-            <Products></Products>
+            <Recipes recipes = {recipes}></Recipes>
             <Bookmarks></Bookmarks>
         </div>
       </div>

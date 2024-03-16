@@ -1,4 +1,4 @@
-import Product from "../Product/Product";
+import Product from "../Recipe/Product";
 
 const Products = () => {
     return (
