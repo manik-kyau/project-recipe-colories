@@ -4,7 +4,7 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <div className="max-w-[1280px] mx-auto mt-6">
+        <div className="max-w-[1280px] mx-auto mt-6 lg:mt-12">
             <nav>
             <div className="navbar bg-base-100 px-0">
               <div className="navbar-start">
