@@ -39,8 +39,8 @@ function App() {
       <Header></Header>
       <div className='max-w-[1240px] mx-auto my-12'>
         <div className='lg:w-2/3 text-center m-auto mb-7 lg:mb-12'>
-          <h1 className='text-3xl lg:text-[40px] font-semibold mb-4'>Our Recipes</h1>
-          <p className='text-base font-normal text-[#150b2b99]'>Preface your recipe with a short intro that shows readers your personal relationship to this dish. For example, write why it's important and what occasion it could be cooked/baked on. This is also a good section to state how many the recipe serves, the prep time, and the overall cook time.</p>
+          <h1 className='text-3xl lg:text-[40px] font-semibold mb-4 lexend'>Our Recipes</h1>
+          <p className='text-base font-normal text-[#150b2b99] lexend'>Preface your recipe with a short intro that shows readers your personal relationship to this dish. For example, write why it's important and what occasion it could be cooked/baked on. This is also a good section to state how many the recipe serves, the prep time, and the overall cook time.</p>
         </div>
 
         <div className='flex flex-col lg:flex-row gap-5'>

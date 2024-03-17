@@ -19,10 +19,10 @@ const Header = () => {
                     <li><a>Search</a></li>
                   </ul>
                 </div>
-                <a className=" min-w-[300px] text-[#150B2B] text-3xl font-bold ">Recipe Calories</a>
+                <a className=" min-w-[300px] text-[#150B2B] text-3xl font-bold lexend">Recipe Calories</a>
               </div>
               <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal text-xl font-medium text-[#150b2bb3] px-1">
+                <ul className="menu menu-horizontal text-xl font-medium text-[#150b2bb3] px-1 lexend">
                   <li><a>Home</a></li>
                   <li><a>Recipes</a></li>
                   <li><a>About</a></li>
@@ -42,11 +42,11 @@ const Header = () => {
             {/* Banner Section */}
             <div className="banner flex justify-center items-center mt-6 lg:mt-12 rounded-3xl h-[550px] p-8">
                 <div className='lg:w-5/6 space-y-6 mb-6'>
-                    <h1 className='text-3xl lg:text-5xl text-center font-bold text-white lg:leading-[60px]'>Discover an exceptional cooking class tailored for you!</h1>
-                    <p className='text-lg font-normal text-center text-white pb-2'>A Cook plans, prepares, and cooks food items to ensure the highest quality service and experience for customers. They help keep the kitchen organized and running efficiently.They ensure proper food handling, sanitation and following food storage procedures.</p>
-                    <div className='w-[353px] space-x-6 mx-auto'>
-                        <button className='text-xl font-semibold py-2 px-4 rounded-[50px] bg-[#0BE58A] border-2 border-[#0BE58A]'>Explore Now</button>
-                        <button className='text-xl text-white font-semibold py-2 px-4 rounded-[50px] border-2 border-white'>Our Feedback</button>
+                    <h1 className='text-3xl lg:text-5xl text-center font-bold text-white lg:leading-[60px] lexend'>Discover an exceptional cooking class tailored for you!</h1>
+                    <p className='text-lg font-normal text-center text-white pb-2 lexend'>A Cook plans, prepares, and cooks food items to ensure the highest quality service and experience for customers. They help keep the kitchen organized and running efficiently.They ensure proper food handling, sanitation and following food storage procedures.</p>
+                    <div className='w-[366px] space-x-6 mx-auto'>
+                        <button className='text-xl font-semibold py-2 px-4 rounded-[50px] bg-[#0BE58A] border-2 border-[#0BE58A] lexend'>Explore Now</button>
+                        <button className='text-xl text-white font-semibold py-2 px-4 rounded-[50px] border-2 border-white lexend'>Our Feedback</button>
                     </div>
                 </div>
             </div>
