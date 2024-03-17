@@ -1,9 +1,12 @@
-// import './App.css'
+// import React from 'react';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 import { useState } from 'react';
 import Bookmarks from './Components/Bookmarks/Bookmarks';
-import Header from './Components/Header/Header'
-import Recipes from './Components/Recipes/Recipes'
+import Header from './Components/Header/Header';
+import Recipes from './Components/Recipes/Recipes';
 import { useEffect } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+// import { Toast } from 'react-toastify/dist/components';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -13,17 +16,20 @@ function App() {
     .then(response => response.json())
     .then(data => setRecipes(data))
   },[]);
+
   // handle Recipe Button
   const handleRecipeBtn = recipe =>{
-    setBookmark([...bookmark, recipe]);
-    // console.log('Ami ki button connect korte parbo?',recipe);
-    // const selectedRecipe = bookmark.find(curr => curr.id === recipe.recipe_id);
-    // if(!selectedRecipe){
-    //   setBookmark([...bookmark, recipe])
-    // }
+    const selectedRecipe = bookmark.find((item) => item.recipe_id === recipe.recipe_id);
+    if(!selectedRecipe){
+      setBookmark([...bookmark, recipe]);
+    }
+    else{
+      toast.error("🦄 You can't order a recipe more than once !");
+    }
   }
+  
+  // remove recipe items from bookmark
   const handleremoveRecipe = (id)=>{
-    // console.log('habi jabi r add korvo na', id);
     const remainingBookmark = bookmark.filter(recipe => recipe.recipe_id !== id);
     setBookmark(remainingBookmark);
   }
@@ -34,7 +40,7 @@ function App() {
       <div className='max-w-[1240px] mx-auto my-12'>
         <div className='lg:w-2/3 text-center m-auto mb-7 lg:mb-12'>
           <h1 className='text-3xl lg:text-[40px] font-semibold mb-4'>Our Recipes</h1>
-          <p className='text-base font-normal text-[#150b2b99]'>Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. Eget urna volutpat curabitur elementum mauris aenean neque. </p>
+          <p className='text-base font-normal text-[#150b2b99]'>Preface your recipe with a short intro that shows readers your personal relationship to this dish. For example, write why it's important and what occasion it could be cooked/baked on. This is also a good section to state how many the recipe serves, the prep time, and the overall cook time.</p>
         </div>
 
         <div className='flex flex-col lg:flex-row gap-5'>
@@ -42,6 +48,7 @@ function App() {
             <Bookmarks bookmark={bookmark} handleremoveRecipe = {handleremoveRecipe}></Bookmarks>
         </div>
       </div>
+      <ToastContainer />
     </div>
   )
 }

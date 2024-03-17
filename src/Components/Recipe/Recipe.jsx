@@ -2,19 +2,19 @@ import PropTypes from 'prop-types';
 import views from '../../assets/images/icons/view.png'
 import calory from '../../assets/images/icons/calory.png'
 const Recipe = ({recipe, handleRecipeBtn}) => {
-    // console.log('Connected recipe',recipe)
+
     return (
         <div className="card bg-base-100 hover:shadow-xl p-5 border">
           <img className='rounded-2xl h-[200px]' src={recipe.recipe_image} alt="Shoes"/>
           <div className="mt-6">
-            <h2 className="text-xl font-semibold">{recipe.recipe_name}</h2>
-            <p className="text-base font-normal text-[#878787] mt-4">{recipe.short_description}</p>
+            <h2 className="text-xl font-semibold">{recipe.recipe_name.slice(0,32)}</h2>
+            <p className="text-base font-normal text-[#878787] mt-4">{recipe.short_description.slice(0,80)}</p>
             <div className='my-6'>
                 <h2 className="text-lg font-medium text-[#282828]">Ingredients: {recipe.ingredients.length} </h2>
                 
-                <div className="ml-4 mt-3">
+                <div className="ml-4 mt-3"> 
                 {
-                    recipe.ingredients.map((ingred,idx) => <ul key={idx}>
+                    recipe.ingredients.map((ingred,idx) => <ul key={idx} className='list-disc pl-4'>
                         <li className="text-base font-normal text-[#878787]">{ingred}</li>
                     </ul>)  
                 }

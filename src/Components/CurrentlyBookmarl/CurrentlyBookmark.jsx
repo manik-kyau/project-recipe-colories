@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const CurrentlyBookmark = ({cBookmark}) => {
     console.log(cBookmark);
     return (
@@ -24,5 +25,7 @@ const CurrentlyBookmark = ({cBookmark}) => {
         </div>
     );
 };
-
+CurrentlyBookmark.propTypes = {
+    CurrentlyBookmark: PropTypes.object.isRequired,
+}
 export default CurrentlyBookmark;

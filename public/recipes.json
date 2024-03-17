@@ -46,7 +46,7 @@
         "recipe_image": "https://i.ibb.co/zr5YCjt/instagram-In-Stream-Square-Vegetable-Pad-Thai0675-1080x675.jpg"
     },
     {
-        "recipe_id": "6",
+        "recipe_recipe_id": "6",
         "recipe_name": "Classic Beef Burger",
         "short_description": "An iconic American burger made with juicy beef patties, fresh vegetables, and melted cheese, sandwiched between soft burger buns.",
         "ingredients": ["500 g ground beef","4 burger buns","4 slices cheddar cheese","1 onion, thinly sliced"],

@@ -2,13 +2,11 @@ import PropTypes from 'prop-types';
 import CurrentlyBookmark from '../CurrentlyBookmarl/CurrentlyBookmark';
 import { useState } from 'react';
 
-const Bookmarks = ({bookmark,handleremoveRecipe}) => {
-    // console.log(bookmark);
+const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
 
-    const [cBookmark, setCBookmark] = useState([]);
+    const [cBookmark, setCBookmark] = useState([])
 
-    const handleWantToCock = (currBookmark) =>{
-        console.log('habi jabi cocking ',currBookmark);
+    const handlePreparing = (currBookmark) =>{
         setCBookmark([...cBookmark,currBookmark]);
     }
     return (
@@ -28,8 +26,8 @@ const Bookmarks = ({bookmark,handleremoveRecipe}) => {
                 <h3  className="h-full w-[100px] text-sm font-normal text-[#282828b3] pl-1">{book.preparing_time}</h3>
                 <h2 className=" h-full pl-1 text-sm font-normal text-[#282828b3] ml-6 mr-4">{book.calories}</h2>
                 <button onClick={()=>{
-                    handleWantToCock(book)
-                    handleremoveRecipe(book.recipe_id)
+                    handlePreparing(book);
+                    handleremoveRecipe(book.recipe_id);
                     }}
                  className="h-full text-sm font-medium text-[#150B2B] bg-[#0BE58A] hover:bg-[#0BE58A] px-2 py-1 rounded-[50px]">Preparing</button>
                 </div>)
@@ -57,6 +55,5 @@ Bookmarks.propTypes = {
     bookmarks: PropTypes.object.isRequired,
     handleWantToCock: PropTypes.func.isRequired,
     handleremoveRecipe: PropTypes.func.isRequired,
-    handleWantToCock: PropTypes.func.isRequired
 }
 export default Bookmarks;
