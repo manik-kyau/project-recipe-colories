@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 const CurrentlyBookmark = ({cBookmark}) => {
-    console.log(cBookmark);
+    // console.log(cBookmark);
     return (
         <div>
             <div>

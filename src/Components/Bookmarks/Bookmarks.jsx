@@ -4,11 +4,30 @@ import { useState } from 'react';
 
 const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
 
-    const [cBookmark, setCBookmark] = useState([])
+    const [cBookmark, setCBookmark] = useState([]);
+    const [timeCount, setTimeCount] = useState(0);
+    const [caloryCount, setCaloryCount] =useState(0)
 
-    const handlePreparing = (currBookmark) =>{
-        setCBookmark([...cBookmark,currBookmark]);
+    // when click Preparing button add recipe in Currently cooking table
+    const handlePreparing = (book) =>{
+        setCBookmark([...cBookmark,book]);
     }
+
+    
+    const handleTimeCount = (time,calories) =>{
+        // set total time
+        const timeArry =time.split(' ');
+        const timeInt = parseInt(timeArry[0]);
+        const sumOfTime = timeCount + timeInt;
+        setTimeCount(sumOfTime);
+        // set total calories
+        const caloryArry =calories.split(' ');
+        const caloryInt = parseInt(caloryArry[0]);
+        const sumOfCalories = caloryCount + caloryInt;
+        setCaloryCount(sumOfCalories)
+    }
+
+
     return (
         <div className="lg:w-[500px] rounded-2xl border">
             <h1 className="w-3/5 text-2xl font-semibold border-b-2 mx-auto text-center py-3">Want to cook: {bookmark.length}</h1>
@@ -28,6 +47,7 @@ const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
                 <button onClick={()=>{
                     handlePreparing(book);
                     handleremoveRecipe(book.recipe_id);
+                    handleTimeCount(book.preparing_time,book.calories);
                     }}
                  className="h-full text-sm font-medium text-[#150B2B] bg-[#0BE58A] hover:bg-[#0BE58A] px-2 py-1 rounded-[50px]">Preparing</button>
                 </div>)
@@ -38,13 +58,13 @@ const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
 
             <div className="flex justify-end px-5 mt-4">
                 <div className="flex gap-5">
-                    <div className="text-base font-medium text-[#282828cc]">
+                    <div className="text-base font-bold text-[#282828cc]">
                         <h2>Total Time = </h2>
-                        <h2>45 minutes</h2>
+                        <h2>{timeCount} minutes</h2>
                     </div>
-                    <div className="text-base font-medium text-[#282828cc]">
+                    <div className="text-base font-bold text-[#282828cc]">
                         <h2>Total Calories = </h2>
-                        <h2>1050 calories</h2>
+                        <h2>{caloryCount} calories</h2>
                     </div>
                 </div>
             </div>

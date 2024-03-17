@@ -1,5 +1,5 @@
 // import React from 'react';
-import { ToastContainer, Zoom, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { useState } from 'react';
 import Bookmarks from './Components/Bookmarks/Bookmarks';
 import Header from './Components/Header/Header';
@@ -52,5 +52,4 @@ function App() {
     </div>
   )
 }
-
 export default App;
