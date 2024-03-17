@@ -6,7 +6,6 @@ import Header from './Components/Header/Header';
 import Recipes from './Components/Recipes/Recipes';
 import { useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-// import { Toast } from 'react-toastify/dist/components';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -24,7 +23,7 @@ function App() {
       setBookmark([...bookmark, recipe]);
     }
     else{
-      toast.error("🦄 You can't order a recipe more than once !");
+      toast.error("Allready exist !");
     }
   }
   
@@ -37,7 +36,7 @@ function App() {
   return (
     <div className='px-5 lg:px-0'>
       <Header></Header>
-      <div className='max-w-[1240px] mx-auto my-12'>
+      <div className='max-w-[1280px] mx-auto my-12'>
         <div className='lg:w-2/3 text-center m-auto mb-7 lg:mb-12'>
           <h1 className='text-3xl lg:text-[40px] font-semibold mb-4 lexend'>Our Recipes</h1>
           <p className='text-base font-normal text-[#150b2b99] lexend'>Preface your recipe with a short intro that shows readers your personal relationship to this dish. For example, write why it's important and what occasion it could be cooked/baked on. This is also a good section to state how many the recipe serves, the prep time, and the overall cook time.</p>

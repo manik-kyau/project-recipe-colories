@@ -13,7 +13,6 @@ const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
         setCBookmark([...cBookmark,book]);
     }
 
-    
     const handleTimeCount = (time,calories) =>{
         // set total time
         const timeArry =time.split(' ');
@@ -28,45 +27,42 @@ const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
     }
 
     return (
-        <div className="lg:w-[500px] rounded-2xl border">
-            <h1 className="w-3/5 text-2xl font-semibold border-b-2 mx-auto text-center py-3 lexend">Want to cook: {bookmark.length}</h1>
-            <div className="w-2/3 flex justify-between text-base font-medium text-[#878787] mt-5 ml-8 fira-sans">
-                <h2 className='pl-[2px]'>Name</h2>
-                <h2>Time</h2>
-                <h2>Calories</h2>
-            </div>
-            <div className='mt-4 py-3 '>
-            {
-                bookmark.map((book,idx)=><div key={idx} className="flex 
-                 items-center px-3 py-2 bg-gray-100">
-                <p className="text-sm font-normal text-[#282828b3] mr-1">{idx + 1}. </p>
-                <h2 className="w-[130px] h-full text-sm font-normal text-[#282828b3] pl-1  fira-sans">{book.recipe_name}</h2>
-                <h3  className="h-full w-[100px] text-sm font-normal text-[#282828b3] pl-1  fira-sans">{book.preparing_time}</h3>
-                <h2 className=" h-full pl-1 text-sm font-normal text-[#282828b3] ml-6 mr-4  fira-sans">{book.calories}</h2>
-                <button onClick={()=>{
-                    handlePreparing(book);
-                    handleremoveRecipe(book.recipe_id);
-                    handleTimeCount(book.preparing_time,book.calories);
-                    }}
-                 className="h-full text-sm font-medium text-[#150B2B] bg-[#0BE58A] hover:bg-[#0BE58A] px-2 py-1 rounded-[50px] lexend">Preparing</button>
-                </div>)
-            }
+        <div className="lg:w-[550px] rounded-2xl border">
+            <h1 className="w-3/5 text-xl lg:text-2xl font-semibold border-b-2 mx-auto text-center py-3 lexend">Want to cook: {bookmark.length}</h1>
+            <div className='mt-4'>
+                <table className=''>
+                    <thead>
+                        <tr className='text-base font-medium text-[#878787] pb-10 fira-sans'>
+                            <th className='px-3'></th>
+                            <th className='min-w-[140px] text-start pl-3 pb-4'>Name</th>
+                            <th className='min-w-[100px] text-start pl-3 pb-4'>Time</th>
+                            <th className='min-w-[40px] text-start pl-3 pb-4'>Calories</th>
+                        </tr>
+                    </thead>
+                        <tbody className='w-full fira-sans'>
+                        {
+                            bookmark.map((book,idx)=> <tr key={idx} className='bg-gray-100'>
+                                <td className='text-base font-medium text-[#282828b3] pl-3 '>{idx + 1}.</td>
+                                <td className='text-base font-medium text-[#282828b3] pl-3 py-3'>{book.recipe_name}</td>
+                                <td className='text-base font-medium text-[#282828b3] pl-3 pr-4'>{book.preparing_time}</td>
+                                <td className='text-base font-medium text-[#282828b3] px-3  py-3'>{book.calories}</td>
+                                <td className=' pr-3'><button  onClick={()=>{
+                                handlePreparing(book);
+                                handleremoveRecipe(book.recipe_id);
+                                handleTimeCount(book.preparing_time,book.calories);
+                                }} className="h-full text-sm font-medium text-[#150B2B] bg-[#0BE58A] hover:bg-[#0BE58A] px-2 py-1 rounded-[50px] lexend">Preparing</button></td>
+                            </tr>)
+                        }
+                        </tbody>
+                </table>
             </div>
 
-            <CurrentlyBookmark cBookmark = {cBookmark}></CurrentlyBookmark>
+            <CurrentlyBookmark 
+            cBookmark = {cBookmark}
+            timeCount = {timeCount}
+            caloryCount = {caloryCount}
+            ></CurrentlyBookmark>
 
-            <div className="flex justify-end px-5 mt-4">
-                <div className="flex gap-5">
-                    <div className="text-[#282828cc] lexend">
-                        <h2 className='text-lg font-bold'>Total Time</h2>
-                        <h2 className='text-base font-semibold'>{timeCount} minutes</h2>
-                    </div>
-                    <div className=" text-[#282828cc] lexend">
-                        <h2 className='text-lg font-bold'>Total Calories</h2>
-                        <h2 className='text-base font-semibold'>{caloryCount} calories</h2>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };

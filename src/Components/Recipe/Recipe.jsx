@@ -7,7 +7,7 @@ const Recipe = ({recipe, handleRecipeBtn}) => {
         <div className="card bg-base-100 hover:shadow-xl p-5 border">
           <img className='rounded-2xl h-[200px]' src={recipe.recipe_image} alt="Shoes"/>
           <div className="mt-6">
-            <h2 className="text-xl font-semibold lexend">{recipe.recipe_name.slice(0,32)}</h2>
+            <h2 className="text-xl font-semibold lexend">{recipe.recipe_name}</h2>
             <p className="text-base font-normal text-[#878787] mt-4 fira-sans">{recipe.short_description.slice(0,80)}</p>
             <div className='my-6'>
                 <h2 className="text-lg font-medium text-[#282828] lexend">Ingredients: {recipe.ingredients.length} </h2>
