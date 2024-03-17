@@ -35,7 +35,7 @@ const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
                         <tr className='text-base font-medium text-[#878787] pb-10 fira-sans'>
                             <th className='px-3'></th>
                             <th className='min-w-[140px] text-start pl-3 pb-4'>Name</th>
-                            <th className='min-w-[100px] text-start pl-3 pb-4'>Time</th>
+                            <th className='min-w-[104px] text-start pl-3 pb-4'>Time</th>
                             <th className='min-w-[40px] text-start pl-3 pb-4'>Calories</th>
                         </tr>
                     </thead>
@@ -50,7 +50,7 @@ const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
                                 handlePreparing(book);
                                 handleremoveRecipe(book.recipe_id);
                                 handleTimeCount(book.preparing_time,book.calories);
-                                }} className="h-full text-sm font-medium text-[#150B2B] bg-[#0BE58A] hover:bg-[#0BE58A] px-2 py-1 rounded-[50px] lexend">Preparing</button></td>
+                                }} className="h-full text-sm font-medium text-[#150B2B] bg-[#0BE58A] hover:bg-[#0BE58A] px-3 py-1 rounded-[50px] lexend">Preparing</button></td>
                             </tr>)
                         }
                         </tbody>
