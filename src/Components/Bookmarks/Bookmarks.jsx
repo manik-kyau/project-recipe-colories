@@ -34,9 +34,9 @@ const Bookmarks = ({bookmark,handleremoveRecipe,}) => {
                     <thead>
                         <tr className='text-base font-medium text-[#878787] pb-10 fira-sans'>
                             <th className='px-3'></th>
-                            <th className='min-w-[140px] text-start pl-3 pb-4'>Name</th>
-                            <th className='min-w-[104px] text-start pl-3 pb-4'>Time</th>
-                            <th className='min-w-[40px] text-start pl-3 pb-4'>Calories</th>
+                            <th className='lg:min-w-[140gitpx] text-start pl-3 pb-4'>Name</th>
+                            <th className='lg:min-w-[104px] text-start pl-3 pb-4'>Time</th>
+                            <th className='lg:min-w-[40px] text-start pl-3 pb-4'>Calories</th>
                         </tr>
                     </thead>
                         <tbody className='w-full fira-sans'>
